@@ -2,6 +2,7 @@ package main;
 
 import controller.CustomLabel;
 import controller.MenuPanel;
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
@@ -34,14 +35,6 @@ public class main extends javax.swing.JFrame {
 
     int location = 0;
 
-    public int Location() {
-        return location;
-    }
-
-    public void setLocation(int location) {
-        this.location = location;
-    }
-
     public main() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
@@ -59,18 +52,21 @@ public class main extends javax.swing.JFrame {
             menutab.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    setLocation(finalI);
+                    location = finalI;
                     setTabSelect(finalI);
                 }
             });
-            pnlMenu.add(menutab, new AbsoluteConstraints(i, k));
+            pnlMenu.add(menutab, new AbsoluteConstraints(0, k));
             k += 55;
         }
     }
 
     public void changeTab(JPanel pnl) {
-        this.setLayout(new AbsoluteLayout());
-        this.add(pnl, new AbsoluteConstraints(250, 80));
+        GiaoDien.removeAll();
+        GiaoDien.revalidate(); // Cần gọi revalidate để cập nhật layout
+        GiaoDien.repaint();
+        GiaoDien.setLayout(new AbsoluteLayout());
+        GiaoDien.add(pnl, new AbsoluteConstraints(0, 0));
     }
 
     public void setTabSelect(int location) {
@@ -91,10 +87,10 @@ public class main extends javax.swing.JFrame {
                 changeTab(new NhanVien());
                 break;
             case 5:
-                changeTab(new NhaCungCap());
+                changeTab(new KhachHang());
                 break;
             case 6:
-                changeTab(new KhachHang());
+                changeTab(new NhaCungCap());
                 break;
             case 7:
                 changeTab(new SanPham());

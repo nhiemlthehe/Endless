@@ -33,62 +33,67 @@ public class ChuyenSever extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         lblQuayLai = new javax.swing.JLabel();
         txtSever = new javax.swing.JTextField();
-        btnChuyenDoi = new controller.BlackButton();
         jLabel7 = new javax.swing.JLabel();
         txtDatabase = new javax.swing.JTextField();
+        btnChuyenDoi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1280, 730));
+        setMinimumSize(new java.awt.Dimension(1280, 730));
+        setPreferredSize(new java.awt.Dimension(1280, 730));
 
         jPanel1.setBackground(new java.awt.Color(254, 220, 197));
         jPanel1.setMaximumSize(new java.awt.Dimension(1460, 740));
         jPanel1.setMinimumSize(new java.awt.Dimension(1460, 740));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1460, 740));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1280, 730));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hinh (2).png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 530, 470));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 530, 470));
 
         jPanel2.setBackground(new java.awt.Color(254, 230, 214));
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(1, 167, 104));
         jLabel3.setText("Chuyển Sever");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 200, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Sever:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 101, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 101, -1));
 
+        lblQuayLai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblQuayLai.setText("Quay lại đăng nhập");
-        jPanel2.add(lblQuayLai, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 110, -1));
-        jPanel2.add(txtSever, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 260, 40));
+        jPanel2.add(lblQuayLai, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 110, -1));
+        jPanel2.add(txtSever, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 340, 40));
 
-        btnChuyenDoi.setBackground(new java.awt.Color(242, 80, 25));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setText("Database:");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 80, -1));
+
+        txtDatabase.setEditable(false);
+        jPanel2.add(txtDatabase, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 340, 40));
+
+        btnChuyenDoi.setBackground(new java.awt.Color(1, 167, 104));
+        btnChuyenDoi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnChuyenDoi.setForeground(new java.awt.Color(255, 255, 255));
         btnChuyenDoi.setText("Chuyển đổi");
-        btnChuyenDoi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnChuyenDoi.setPreferredSize(new java.awt.Dimension(200, 50));
-        btnChuyenDoi.setRadius(50);
         btnChuyenDoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChuyenDoiActionPerformed(evt);
             }
         });
-        jPanel2.add(btnChuyenDoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
+        jPanel2.add(btnChuyenDoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 150, 40));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Database:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 80, -1));
-        jPanel2.add(txtDatabase, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 260, 40));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 210, 390, 440));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 420, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +143,7 @@ public class ChuyenSever extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private controller.BlackButton btnChuyenDoi;
+    private javax.swing.JButton btnChuyenDoi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
