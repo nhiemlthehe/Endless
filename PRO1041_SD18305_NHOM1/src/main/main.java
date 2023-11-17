@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -48,21 +49,14 @@ public class main extends javax.swing.JFrame {
     public void addMenuPanel() {
         pnlMenu.setLayout(new AbsoluteLayout());
         int k = 0;
-//        String[] menuName = {"Trang chủ", "Giao Dịch", "Hóa đơn", "Đổi hàng", "Nhân viên", "Khách hàng", "Nhà cung cấp",
-//            "Sản phẩm", "Thuộc tính", "Nhập hàng", "Khuyến mãi", "Thống kê", "Thoát"};
-//        String[] icon = {"TrangChu_24x", "GiaoDich_24x", "HoaDon_24x", "DoiHang_24x", "NhanVien_24x", "KhachHang_24x.png", "NhaCungCap_24x.jpg",
-//            "SanPham_24x.jpg", "ChiTietSanPham_24x.jpg", "NhapHang_24x", "KhuyenMai_24x.jpg", "ThongKe_24x.jpg"};
+        String[] menuName = {"Trang chủ", "Giao Dịch", "Hóa đơn", "Đổi hàng", "Nhân viên", "Khách hàng", "Nhà cung cấp",
+            "Sản phẩm", "Thuộc tính", "Nhập hàng", "Khuyến mãi", "Thống kê", "Thoát"};
+        String[] icon = {"TrangChu_24x.jpg", "GiaoDich_24x.jpg", "HoaDon_24x.jpg", "DoiHang_24x.jpg", "NhanVien_24x.jpg", "KhachHang_24x.png", "NhaCungCap_24x.jpg",
+            "SanPham_24x.jpg", "ChiTietSanPham_24x.jpg", "NhapHang_24x.jpg", "KhuyenMai_24x.jpg", "ThongKe_24x.jpg", "Thoat_24x.jpg"};
         for (int i = 0; i < 13; i++) {
-            MenuPanel menutab = new MenuPanel(i, location);
-//            JLabel iconLabel = new JLabel();
-//            iconLabel.setBorder(new EmptyBorder(0, 10, 0, 10)); // Điều chỉnh padding
-//            add(iconLabel, BorderLayout.EAST);
-//
-//            JLabel titleLabel = new JLabel();
-//            titleLabel.setForeground(Color.WHITE);
-//            titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
-//            titleLabel.setBorder(new EmptyBorder(0, 10, 0, 5)); // Điều chỉnh padding
-//            add(titleLabel, BorderLayout.CENTER);
+            ImageIcon icon1 = new ImageIcon(getClass().getResource("/icon/"+icon[i]));
+            MenuPanel menutab = new MenuPanel(i, location, icon1, menuName[i]);
+
             int finalI = i;
             menutab.addMouseListener(new MouseAdapter() {
                 @Override
@@ -78,7 +72,7 @@ public class main extends javax.swing.JFrame {
 
     public void changeTab(JPanel pnl) {
         GiaoDien.removeAll();
-        GiaoDien.revalidate(); // Cần gọi revalidate để cập nhật layout
+        GiaoDien.revalidate(); 
         GiaoDien.repaint();
         GiaoDien.setLayout(new AbsoluteLayout());
         GiaoDien.add(pnl, new AbsoluteConstraints(0, 0));
@@ -215,6 +209,7 @@ public class main extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.setForeground(new java.awt.Color(175, 29, 0));
         jPanel3.setMaximumSize(new java.awt.Dimension(1530, 80));
         jPanel3.setMinimumSize(new java.awt.Dimension(1530, 80));
         jPanel3.setPreferredSize(new java.awt.Dimension(1530, 80));

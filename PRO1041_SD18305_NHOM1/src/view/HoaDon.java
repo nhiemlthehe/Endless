@@ -17,7 +17,6 @@ public class HoaDon extends javax.swing.JPanel {
      */
     public HoaDon() {
         initComponents();
-        System.out.println("hello");
     }
 
     /**
