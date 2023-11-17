@@ -1,16 +1,14 @@
 package main;
 
-import controller.CustomLabel;
 import controller.MenuPanel;
 import java.awt.BorderLayout;
-import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JDesktopPane;
-import javax.swing.JOptionPane;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+import javax.swing.border.EmptyBorder;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
 import view.DoiTraHang;
@@ -35,6 +33,10 @@ public class main extends javax.swing.JFrame {
 
     int location = 0;
 
+    public void changeLocation(int a) {
+        this.location = a;
+    }
+
     public main() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
@@ -46,8 +48,21 @@ public class main extends javax.swing.JFrame {
     public void addMenuPanel() {
         pnlMenu.setLayout(new AbsoluteLayout());
         int k = 0;
+//        String[] menuName = {"Trang chủ", "Giao Dịch", "Hóa đơn", "Đổi hàng", "Nhân viên", "Khách hàng", "Nhà cung cấp",
+//            "Sản phẩm", "Thuộc tính", "Nhập hàng", "Khuyến mãi", "Thống kê", "Thoát"};
+//        String[] icon = {"TrangChu_24x", "GiaoDich_24x", "HoaDon_24x", "DoiHang_24x", "NhanVien_24x", "KhachHang_24x.png", "NhaCungCap_24x.jpg",
+//            "SanPham_24x.jpg", "ChiTietSanPham_24x.jpg", "NhapHang_24x", "KhuyenMai_24x.jpg", "ThongKe_24x.jpg"};
         for (int i = 0; i < 13; i++) {
             MenuPanel menutab = new MenuPanel(i, location);
+//            JLabel iconLabel = new JLabel();
+//            iconLabel.setBorder(new EmptyBorder(0, 10, 0, 10)); // Điều chỉnh padding
+//            add(iconLabel, BorderLayout.EAST);
+//
+//            JLabel titleLabel = new JLabel();
+//            titleLabel.setForeground(Color.WHITE);
+//            titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
+//            titleLabel.setBorder(new EmptyBorder(0, 10, 0, 5)); // Điều chỉnh padding
+//            add(titleLabel, BorderLayout.CENTER);
             int finalI = i;
             menutab.addMouseListener(new MouseAdapter() {
                 @Override
@@ -67,42 +82,57 @@ public class main extends javax.swing.JFrame {
         GiaoDien.repaint();
         GiaoDien.setLayout(new AbsoluteLayout());
         GiaoDien.add(pnl, new AbsoluteConstraints(0, 0));
+        pnlMenu.removeAll();
+        pnlMenu.revalidate();
+        pnlMenu.repaint();
+        addMenuPanel();
     }
 
     public void setTabSelect(int location) {
         switch (location) {
             case 0:
                 changeTab(new TrangChu());
+                changeLocation(0);
                 break;
             case 1:
                 changeTab(new GiaoDich());
+                changeLocation(0);
                 break;
             case 2:
                 changeTab(new HoaDon());
+                changeLocation(0);
                 break;
             case 3:
                 changeTab(new DoiTraHang());
+                changeLocation(0);
                 break;
             case 4:
                 changeTab(new NhanVien());
+                changeLocation(0);
                 break;
             case 5:
                 changeTab(new KhachHang());
+                changeLocation(0);
                 break;
             case 6:
                 changeTab(new NhaCungCap());
+                changeLocation(0);
                 break;
             case 7:
                 changeTab(new SanPham());
+                changeLocation(0);
                 break;
             case 8:
                 changeTab(new ThuocTinh());
+                changeLocation(0);
                 break;
             case 9:
                 changeTab(new NhapHang());
+                changeLocation(0);
                 break;
             case 10:
                 changeTab(new KhuyenMai());
+                changeLocation(0);
                 break;
             case 11:
                 changeTab(new ThongKe());
@@ -110,7 +140,9 @@ public class main extends javax.swing.JFrame {
             case 12:
                 this.dispose();
                 break;
-           
+            case 13:
+                changeTab(new TaiKhoan());
+                break;
             default:
                 break;
         }
@@ -208,9 +240,9 @@ public class main extends javax.swing.JFrame {
         myButton1.setText(" ");
         myButton1.setPreferredSize(new java.awt.Dimension(100, 60));
         myButton1.setRadius(60);
-        myButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myButton1ActionPerformed(evt);
+        myButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                myButton1MouseClicked(evt);
             }
         });
         jPanel3.add(myButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, 220, -1));
@@ -236,10 +268,9 @@ public class main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
-        location = 12;
-        setTabSelect(location);
-    }//GEN-LAST:event_myButton1ActionPerformed
+    private void myButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myButton1MouseClicked
+        setTabSelect(13);
+    }//GEN-LAST:event_myButton1MouseClicked
 
     /**
      * @param args the command line arguments
