@@ -34,13 +34,20 @@ public class main extends javax.swing.JFrame {
 
     int location = 0;
 
+    public int Location() {
+        return location;
+    }
+
+    public void setLocation(int location) {
+        this.location = location;
+    }
+
     public main() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        setResizable(false);
+        setResizable(false);;
         setTabSelect(location);
         addMenuPanel();
-        
     }
 
     public void addMenuPanel() {
@@ -52,21 +59,18 @@ public class main extends javax.swing.JFrame {
             menutab.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    location = finalI;
+                    setLocation(finalI);
                     setTabSelect(finalI);
                 }
             });
-
-            pnlMenu.add(menutab, new AbsoluteConstraints(0, k));
+            pnlMenu.add(menutab, new AbsoluteConstraints(i, k));
             k += 55;
         }
     }
 
     public void changeTab(JPanel pnl) {
-        GiaoDien.removeAll();
-        GiaoDien.setLayout(new AbsoluteLayout());
-        AbsoluteConstraints constraints = new AbsoluteConstraints(0, 0);
-        GiaoDien.add(pnl, constraints);
+        this.setLayout(new AbsoluteLayout());
+        this.add(pnl, new AbsoluteConstraints(250, 80));
     }
 
     public void setTabSelect(int location) {
@@ -108,11 +112,9 @@ public class main extends javax.swing.JFrame {
                 changeTab(new ThongKe());
                 break;
             case 12:
-                changeTab(new TaiKhoan());
+                this.dispose();
                 break;
-            case 13:
-                changeTab(new TaiKhoan());
-                break;
+           
             default:
                 break;
         }
@@ -127,7 +129,6 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
         GiaoDien = new javax.swing.JPanel();
         logo = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -139,17 +140,6 @@ public class main extends javax.swing.JFrame {
         lblAnhDaiDien = new controller.WhiteLabel();
         myButton1 = new controller.BlackButton();
         pnlMenu = new javax.swing.JPanel();
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -307,7 +297,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private controller.WhiteLabel lblAnhDaiDien;
     private javax.swing.JPanel logo;
     private controller.BlackButton myButton1;
