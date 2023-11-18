@@ -152,11 +152,13 @@ public class main extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        lblAnhDaiDien = new controller.WhiteLabel();
-        myButton1 = new controller.BlackButton();
+        lblUsername = new javax.swing.JLabel();
+        lblRole = new javax.swing.JLabel();
+        lblAvatar = new controller.WhiteLabel();
+        blackButton1 = new controller.BlackButton();
         pnlMenu = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -210,46 +212,68 @@ public class main extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(1530, 80));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Username");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 20, 130, -1));
+        lblUsername.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsername.setText("Username");
+        jPanel3.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 20, 130, -1));
 
-        jLabel3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 204, 0));
-        jLabel3.setText("Role : ");
-        jLabel3.setToolTipText("");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 40, 130, -1));
+        lblRole.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        lblRole.setForeground(new java.awt.Color(255, 204, 0));
+        lblRole.setText("Role : ");
+        lblRole.setToolTipText("");
+        jPanel3.add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 40, 130, -1));
 
-        lblAnhDaiDien.setText(" ");
-        lblAnhDaiDien.setRadius(40);
-        jPanel3.add(lblAnhDaiDien, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 20, 40, 40));
+        lblAvatar.setText(" ");
+        lblAvatar.setMaximumSize(new java.awt.Dimension(40, 40));
+        lblAvatar.setMinimumSize(new java.awt.Dimension(40, 40));
+        lblAvatar.setPreferredSize(new java.awt.Dimension(40, 40));
+        lblAvatar.setRadius(45);
+        jPanel3.add(lblAvatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1305, 15, 45, 45));
 
-        myButton1.setBackground(new java.awt.Color(23, 23, 23));
-        myButton1.setForeground(new java.awt.Color(255, 255, 255));
-        myButton1.setText(" ");
-        myButton1.setPreferredSize(new java.awt.Dimension(100, 60));
-        myButton1.setRadius(60);
-        myButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                myButton1MouseClicked(evt);
+        blackButton1.setText("blackButton1");
+        blackButton1.setRadius(65);
+        blackButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                blackButton1ActionPerformed(evt);
             }
         });
-        jPanel3.add(myButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, 220, -1));
+        jPanel3.add(blackButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1295, 8, 220, 60));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, 80));
 
         pnlMenu.setBackground(new java.awt.Color(0, 0, 0));
 
+        jPanel1.setBackground(new java.awt.Color(29, 36, 46));
+
+        jLabel1.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Coppyright © Endless");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
         pnlMenu.setLayout(pnlMenuLayout);
         pnlMenuLayout.setHorizontalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlMenuLayout.setVerticalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMenuLayout.createSequentialGroup()
+                .addGap(0, 716, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 250, 730));
@@ -261,6 +285,10 @@ public class main extends javax.swing.JFrame {
     private void myButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myButton1MouseClicked
         setTabSelect(13);
     }//GEN-LAST:event_myButton1MouseClicked
+
+    private void blackButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blackButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_blackButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,15 +336,17 @@ public class main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel GiaoDien;
+    private controller.BlackButton blackButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private controller.WhiteLabel lblAnhDaiDien;
+    private controller.WhiteLabel lblAvatar;
+    private javax.swing.JLabel lblRole;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JPanel logo;
-    private controller.BlackButton myButton1;
     private javax.swing.JPanel pnlMenu;
     // End of variables declaration//GEN-END:variables
 }
