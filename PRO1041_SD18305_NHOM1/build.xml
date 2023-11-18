@@ -10,7 +10,9 @@
 <project name="PRO1041_SD18305_NHOM1" default="default" basedir=".">
     <description>Builds, tests, and runs the project PRO1041_SD18305_NHOM1.</description>
     <import file="nbproject/build-impl.xml"/>
-    
+     <presetdef name="javac">
+         <javac includeantruntime="false" />
+    </presetdef>
      <target name="init">
         <!-- Cài đặt thư mục lib làm thư mục compile -->
         <path id="compile.classpath">

@@ -1,15 +1,10 @@
 package main;
 
 import controller.MenuPanel;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
 import view.DoiTraHang;
@@ -54,7 +49,7 @@ public class main extends javax.swing.JFrame {
         String[] icon = {"TrangChu_24x.jpg", "GiaoDich_24x.jpg", "HoaDon_24x.jpg", "DoiHang_24x.jpg", "NhanVien_24x.jpg", "KhachHang_24x.png", "NhaCungCap_24x.jpg",
             "SanPham_24x.jpg", "ChiTietSanPham_24x.jpg", "NhapHang_24x.jpg", "KhuyenMai_24x.jpg", "ThongKe_24x.jpg", "Thoat_24x.jpg"};
         for (int i = 0; i < 13; i++) {
-            ImageIcon icon1 = new ImageIcon(getClass().getResource("/icon/"+icon[i]));
+            ImageIcon icon1 = new ImageIcon(getClass().getResource("/icon/" + icon[i]));
             MenuPanel menutab = new MenuPanel(i, location, icon1, menuName[i]);
 
             int finalI = i;
@@ -72,7 +67,7 @@ public class main extends javax.swing.JFrame {
 
     public void changeTab(JPanel pnl) {
         GiaoDien.removeAll();
-        GiaoDien.revalidate(); 
+        GiaoDien.revalidate();
         GiaoDien.repaint();
         GiaoDien.setLayout(new AbsoluteLayout());
         GiaoDien.add(pnl, new AbsoluteConstraints(0, 0));
